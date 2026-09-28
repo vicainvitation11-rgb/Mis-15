@@ -33,7 +33,7 @@
 <div class="entrada-imagen">
 
                   <img
-                      src="IMG_1663.png"
+                      src="foto2.jpg"
                       alt="Mariana celebrando sus 15"
                   >
 
@@ -81,6 +81,9 @@
         <!-- =================================================
              3. INICIO / HERO
              ================================================= -->
+        <div class="imagen-cabecera">
+            <img src="Inicio1.png" alt="Inicio de la invitación de Mariana" loading="lazy" decoding="async">
+        </div>
 <section id="inicio" class="seccion-inicio">
 
             <div class="inicio-contenido">
@@ -88,7 +91,7 @@
                 <div class="inicio-imagen">
 
                     <img
-                        src="image.png"
+                        src="Foto1.jpg"
                         alt="Mariana en su celebración de 15 años"
                     >
 
@@ -183,7 +186,6 @@
 
         </section>
 
-
         <!-- =================================================
              INFORMACIÓN DEL EVENTO
              ================================================= -->
@@ -191,8 +193,15 @@
         <section id="info-evento" class="seccion-info-evento">
 
             <div class="informacion-principal">
-
-                 <h2>Lluvia de Sobores</h2>
+                <img class="adorno-mono" src="MOÑO2.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="sobre-emblema" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                        <path d="m4 7 8 6 8-6"></path>
+                        <path d="m4 17 5-5m11 5-5-5"></path>
+                    </svg>
+                </span>
+                <h2>Lluvia de Sobres</h2>
 
              </div>
 
@@ -439,6 +448,10 @@
                     porque estarás tú.
                 </p>
 
+                <div class="imagen-final">
+                    <img src="Final1.png" alt="Imagen de cierre de la invitación de Mariana" loading="lazy" decoding="async">
+                </div>
+
             </div>
 
         </section>
@@ -455,8 +468,8 @@
             <span class="cerrar-flotante" id="cerrar-flotante">&times;</span>
             <h2>Personalizar Invitación</h2>
             <div class="grupo-formulario">
-                <label for="id-invitado-flotante">Número de Invitado (1-30)</label>
-                <input type="number" id="id-invitado-flotante" min="1" max="30" placeholder="Ingresa tu número...">
+                <label for="id-invitado-flotante">Número de Invitado (1-27)</label>
+                <input type="number" id="id-invitado-flotante" min="1" max="27" placeholder="Ingresa tu número...">
             </div>
             <div id="nombre-invitado-flotante" class="nombre-invitado-flotante"></div>
             <button id="btn-generar-enlace" type="button">Generar enlace</button>
@@ -598,14 +611,42 @@ p {
 .seccion-cuenta-regresiva {
     background: #ffffff;
 
-    padding: 80px 7%;
+    padding: 60px 7% 32px;
 
     text-align: center;
 }
 
+.imagen-cabecera {
+    width: clamp(320px, 44vw, 640px);
+    margin: 0 auto;
+    aspect-ratio: 569 / 180;
+    overflow: hidden;
+}
+
+.imagen-cabecera img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    transform: translateY(-29.45%);
+}
+
+.adorno-mono {
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    z-index: 2;
+    width: clamp(150px, 15vw, 190px);
+    max-width: none;
+    height: auto;
+    transform: rotate(8deg);
+    filter: drop-shadow(0 8px 12px rgba(137, 73, 83, 0.18));
+    pointer-events: none;
+}
+
 .cuenta-regresiva {
     width: min(850px, 100%);
-
+    position: relative;
     margin: auto;
 }
 
@@ -625,16 +666,23 @@ p {
 
 .cuenta-regresiva.finalizado h2,
 .cuenta-regresiva.finalizado .contador {
+    position: absolute;
     opacity: 0;
     transform: translateY(-20px);
     pointer-events: none;
 }
 
+.seccion-cuenta-regresiva .cuenta-regresiva.finalizado h2 {
+    animation: none;
+}
+
 .mensaje-fin-contador {
-    position: relative;
+    position: absolute;
+    top: 100%;
+    left: 50%;
     display: inline-block;
     max-width: min(92%, 760px);
-    margin: 16px auto 0;
+    margin: 0;
     padding: 24px 38px 22px;
     border: 1px solid rgba(192, 120, 144, 0.22);
     border-radius: 999px;
@@ -655,7 +703,7 @@ p {
     -webkit-background-clip: text;
     background-clip: text;
     opacity: 0;
-    transform: translateY(24px) scale(0.96);
+    transform: translate(-50%, 24px) scale(0.96);
     filter: blur(4px);
     transition:
         opacity 0.8s ease,
@@ -688,6 +736,10 @@ p {
 }
 
 .cuenta-regresiva.finalizado .mensaje-fin-contador {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 16px auto 0;
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: drop-shadow(0 3px 14px rgba(155, 75, 99, 0.24));
@@ -739,8 +791,10 @@ p {
     gap: 10px;
     position: relative;
     z-index: 1;
-    padding: 50px 40px;
-    background: #ffffff;
+    padding: 26px clamp(130px, 16vw, 180px) 26px 32px;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(212, 137, 158, 0.12), transparent 70%),
+        #ffffff;
     border: 1px solid rgba(212, 137, 158, 0.15);
     border-radius: 24px;
     box-shadow:
@@ -760,8 +814,46 @@ p {
     font-family: var(--script);
     font-size: clamp(2.5rem, 6vw, 4rem);
     color: var(--rosa-oscuro);
-    margin: 15px 0 5px;
+    margin: 0;
     font-weight: 400;
+}
+
+.sobre-emblema {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: var(--dorado-oscuro);
+    background: rgba(254, 245, 247, 0.9);
+    border: 1px solid rgba(200, 158, 94, 0.4);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.85),
+        0 5px 14px rgba(192, 120, 144, 0.12);
+}
+
+.sobre-emblema svg {
+    width: 19px;
+    height: 19px;
+}
+
+.reveal.visible .sobre-emblema {
+    animation: entradaEmblemaSobre 900ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+}
+
+@keyframes entradaEmblemaSobre {
+    0% {
+        opacity: 0;
+        transform: scale(0.55) rotate(-24deg);
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1.08) rotate(6deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
 }
 
 .informacion-principal strong {
@@ -1392,19 +1484,19 @@ a {
     width: min(1200px, 100%);
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
 
     align-items: center;
 
-    background: #ffffff;
+    background: #fffdfd;
 
-    border: 1px solid rgba(212, 137, 158, 0.2);
+    border: 1px solid rgba(212, 137, 158, 0.25);
 
     box-shadow:
-        var(--sombra),
-        0 0 40px rgba(212, 137, 158, 0.06);
+        0 28px 55px rgba(179, 98, 121, 0.12),
+        0 6px 16px rgba(190, 146, 118, 0.08);
 
-    border-radius: 20px;
+    border-radius: 28px;
 
     position: relative;
     z-index: 2;
@@ -1419,16 +1511,18 @@ a {
 
     position: relative;
 
-    border-radius: 20px 0 0 20px;
+    border-radius: 28px 0 0 28px;
+    background: linear-gradient(135deg, #f9efe7, #f7e5ea);
 }
 
 .entrada-imagen::after {
     content: "";
 
     position: absolute;
-    inset: 20px;
+    inset: 18px;
 
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
 
     pointer-events: none;
 }
@@ -1438,6 +1532,8 @@ a {
     height: 100%;
 
     object-fit: cover;
+    object-position: center 20%;
+    transform: scale(1.08);
 }
 
 
@@ -2129,14 +2225,31 @@ header {
 
 .seccion-info-evento {
     background: #ffffff;
-    padding: 80px 7%;
+    padding: 28px 7%;
     text-align: center;
     position: relative;
 }
 
+@media (max-width: 600px) {
+    #info-evento .informacion-principal {
+        padding: 18px 112px 18px 12px;
+    }
+
+    #info-evento .informacion-principal h2 {
+        font-size: clamp(1.5rem, 5vw, 1.8rem);
+    }
+
+    #info-evento .adorno-mono {
+        top: -8px;
+        right: 8px;
+        width: clamp(96px, 28vw, 124px);
+        transform: rotate(8deg);
+    }
+}
+
 .seccion-invitacion-personal {
     background: #ffffff;
-    padding: 80px 7%;
+    padding: 60px 7%;
     text-align: center;
     position: relative;
 }
@@ -2182,7 +2295,7 @@ header {
 .seccion-detalles,
 .seccion-ubicacion,
 .seccion-confirmacion {
-    padding: 110px 7%;
+    padding: 76px 7%;
 
     background: #ffffff;
 }
@@ -2192,7 +2305,7 @@ header {
 
     max-width: 700px;
 
-    margin: 0 auto 60px;
+    margin: 0 auto 44px;
 }
 
 .titulo-seccion p {
@@ -2610,7 +2723,7 @@ header {
    ========================================================= */
 
 .seccion-despedida {
-    padding: 120px 20px;
+    padding: 92px 20px 0;
 
     text-align: center;
 
@@ -2633,6 +2746,22 @@ header {
     color: var(--dorado-oscuro);
 }
 
+.imagen-final {
+    position: relative;
+    width: clamp(320px, 44vw, 640px);
+    max-width: 100%;
+    margin: 26px auto 0;
+    aspect-ratio: 569 / 180;
+    overflow: hidden;
+}
+
+.imagen-final img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    transform: translateY(-29.45%);
+}
 
 /* =========================================================
    ANIMACIONES DE SCROLL
@@ -2772,20 +2901,37 @@ header {
 
 @media (max-width: 1024px) {
 
+    .pantalla-entrada {
+        height: 100vh;
+        height: 100svh;
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow-y: auto;
+        justify-content: flex-start;
+        padding: clamp(16px, 3vw, 32px);
+        overscroll-behavior: contain;
+    }
+
     .entrada-contenido {
         grid-template-columns: 1fr;
+        margin: auto;
     }
 
     .entrada-imagen {
-        height: 450px;
+        height: clamp(240px, 40svh, 380px);
+    }
+
+    .entrada-texto {
+        padding: clamp(28px, 4vw, 45px);
     }
 
     .inicio-contenido {
-        grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr) minmax(0, 1.15fr);
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: clamp(16px, 3vw, 24px);
+    }
 
-        align-items: stretch;
-
-        gap: 30px;
+    .inicio-texto {
+        display: none;
     }
 
     .inicio-imagen {
@@ -2960,10 +3106,21 @@ header {
 
     .pantalla-entrada {
         padding: 15px;
+        height: 100vh;
+        height: 100svh;
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow-y: auto;
+        justify-content: flex-start;
+        overscroll-behavior: contain;
+    }
+
+    .entrada-contenido {
+        margin: auto;
     }
 
     .entrada-imagen {
-        height: 350px;
+        height: clamp(190px, 38svh, 300px);
     }
 
     .entrada-texto {
@@ -2980,6 +3137,11 @@ header {
 
     .entrada-pequeno {
         font-size: 0.65rem;
+    }
+
+    .entrada-texto .btn-pulsante {
+        width: min(100%, 320px);
+        min-height: 48px;
     }
 
 
@@ -3055,7 +3217,7 @@ header {
     /* Contador */
 
     .cuenta-regresiva {
-        margin: 40px auto 20px;
+        margin: 0 auto;
     }
 
     .cuenta-regresiva h2 {
@@ -3103,7 +3265,7 @@ header {
     /* Información */
 
     .informacion-principal {
-        padding: 30px 20px;
+        padding: 18px 20px;
     }
 
     .informacion-principal h2 {
@@ -3120,12 +3282,21 @@ header {
     .seccion-detalles,
     .seccion-ubicacion,
     .seccion-confirmacion,
+    .seccion-info-evento,
+    .seccion-cuenta-regresiva {
+        padding: 48px 15px;
+    }
+
     .seccion-info-evento {
-        padding: 60px 15px;
+        padding: 22px 15px;
+    }
+
+    .seccion-cuenta-regresiva {
+        padding-bottom: 24px;
     }
 
     .titulo-seccion {
-        margin-bottom: 40px;
+        margin-bottom: 32px;
     }
 
     .titulo-seccion h2 {
@@ -3190,7 +3361,7 @@ header {
     /* Despedida */
 
     .seccion-despedida {
-        padding: 60px 15px;
+        padding: 52px 15px 0;
     }
 
     .despedida-contenido h2 {
@@ -3346,7 +3517,7 @@ header {
 
 }
 
-@media (min-width: 481px) {
+@media (min-width: 601px) {
     .inicio-contenido {
         grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
         gap: 30px;
@@ -4396,19 +4567,31 @@ if (botonConfirmarInvitacion) {
 const INVITADOS = [
     { id: 1, nombre: "Familia Gutierrez Vargas", tipo: "grupo" },
     { id: 2, nombre: "Familia Calixto Vargas", tipo: "grupo" },
-    { id: 3, nombre: "Familia Martin Beltran", tipo: "grupo" },
-    { id: 4, nombre: "Familia Vargas Novoa", tipo: "grupo" },
-    { id: 5, nombre: "Claudia", tipo: "mujer" },
-    { id: 6, nombre: "Familia Gamba Garzon", tipo: "grupo" },
-    { id: 7, nombre: "Familia Beltrán Muñoz", tipo: "grupo" },
-    { id: 8, nombre: "Sonia Ximena Hidalgo Hidalgo", tipo: "mujer" },
-    { id: 9, nombre: "Maria Camila Moreno Hidalgo", tipo: "mujer" },
-    { id: 10, nombre: "Andrea Hidalgo Hidalgo e Hijo", tipo: "grupo" },
-    { id: 11, nombre: "Familia Calixto Tarazon", tipo: "grupo" },
-    { id: 12, nombre: "Ruben Vargas Ramos", tipo: "hombre" },
-    { id: 13, nombre: "Maria Luisa Vargas Ramos", tipo: "mujer" },
-    { id: 14, nombre: "Maria Jesus Vargas Ramos", tipo: "mujer" },
-    { id: 15, nombre: "Gerardo Vargas Ramos", tipo: "hombre" }
+    { id: 3, nombre: "Abuelita", tipo: "mujer" },
+    { id: 4, nombre: "Familia Vargas Zea", tipo: "grupo" },
+    { id: 5, nombre: "Abuelito", tipo: "hombre" },
+    { id: 6, nombre: "Sonia Ximena Hidalgo", tipo: "mujer" },
+    { id: 7, nombre: "Maria Camila Moreno", tipo: "mujer" },
+    { id: 8, nombre: "Hortencia Hidalgo", tipo: "mujer" },
+    { id: 9, nombre: "Andrea Hidalgo e hijo", tipo: "grupo" },
+    { id: 10, nombre: "Familia tio Rodrigo", tipo: "grupo" },
+    { id: 11, nombre: "Claudia", tipo: "mujer" },
+    { id: 12, nombre: "Mariluz Zambrano e hija", tipo: "grupo-femenino" },
+    { id: 13, nombre: "Familia Calixto Tarazona", tipo: "grupo" },
+    { id: 14, nombre: "Familia Gamba Garzon", tipo: "grupo" },
+    { id: 15, nombre: "Familia Hidalgo Novoa", tipo: "grupo" },
+    { id: 16, nombre: "Jeimy Hidalgo Novoa e hijo", tipo: "grupo" },
+    { id: 17, nombre: "Cristian Novoa Novoa e hijo", tipo: "grupo" },
+    { id: 18, nombre: "Pbr. Jorge Beltrán", tipo: "hombre" },
+    { id: 19, nombre: "Familia Martín Beltrán", tipo: "grupo" },
+    { id: 20, nombre: "Familia Beltran Muñoz", tipo: "grupo" },
+    { id: 21, nombre: "Familia del tio Leonardo", tipo: "grupo" },
+    { id: 22, nombre: "Danilo, Angie e hijos", tipo: "grupo" },
+    { id: 23, nombre: "Ruben Vargas Ramos", tipo: "hombre" },
+    { id: 24, nombre: "Maria Luisa Vargas Ramos", tipo: "mujer" },
+    { id: 25, nombre: "Marta Vargas Ramos", tipo: "mujer" },
+    { id: 26, nombre: "Maria Jesus Vargas Ramos", tipo: "mujer" },
+    { id: 27, nombre: "Gerardo Vargas Ramos", tipo: "hombre" }
 ];
 
 function obtenerInvitadoPorId(id) {
@@ -4421,6 +4604,8 @@ function obtenerMensajeInvitado(invitado) {
             return invitado.nombre + ", estás invitado";
         } else if (invitado.tipo === "mujer") {
             return invitado.nombre + ", estás invitada";
+        } else if (invitado.tipo === "grupo-femenino") {
+            return invitado.nombre + ", están invitadas";
         } else {
             return invitado.nombre + ", están invitados";
         }
@@ -4481,7 +4666,7 @@ if (btnGenerarEnlace) {
         const id = idInvitadoFlotante.value.trim();
 
         if (!urlInvitacionPersonalizada) {
-            if (!id || parseInt(id, 10) < 1 || parseInt(id, 10) > 15) {
+            if (!id || parseInt(id, 10) < 1 || parseInt(id, 10) > INVITADOS.length) {
                 idInvitadoFlotante.focus();
                 return;
             }
@@ -4512,7 +4697,7 @@ if (btnGenerarEnlace) {
 if (idInvitadoFlotante && nombreInvitadoFlotante) {
     idInvitadoFlotante.addEventListener("input", function () {
         const id = parseInt(this.value.trim(), 10);
-        if (!isNaN(id) && id >= 1 && id <= 15) {
+        if (!isNaN(id) && id >= 1 && id <= INVITADOS.length) {
             const invitado = obtenerInvitadoPorId(id);
             if (invitado) {
                 nombreInvitadoFlotante.textContent = obtenerMensajeInvitado(invitado);
